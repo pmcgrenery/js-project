@@ -2,3 +2,38 @@ img{
     width: 600px;
     height:auto;
 }
+
+.bg-dark{
+    background:linear-gradient(#000, rgba(0, 0, 0, 0)) !important;
+}
+
+.nav-link{
+    font-size:1.25rem;
+    color:dark-grey;
+}
+
+.nav-link.active{
+    text-decoration:underline;
+}
+
+.navbar-brand{
+    font-size:2.0rem;
+}
+
+@media (min-width: 576px){
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 2.0rem;
+    padding-left: .5rem;
+}
+}
+
+
+.navcallout-container{
+    background: lightblue url("../images/dmp-0204_websize.jpg") no-repeat bottom center fixed;
+    background-size: cover;
+    height:100vh;
+    width:100%;
+    overflow:hidden;
+    scale:0.5;
+}
+
