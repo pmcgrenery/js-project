@@ -1,23 +1,42 @@
-img{
-    width: 600px;
-    height:auto;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+body{
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+/* NAVBAR ----------------------------------------------------------------------------------------------------------*/
+
+.navbar{
+ position: fixed;
+    background: rgba(255, 255, 255, 0.7);
+    top: 0;
+    left: 0;
+    right:0;
+    padding: 16px;
+    vertical-align: baseline;
+
 }
 
 .bg-dark{
     background:linear-gradient(#000, rgba(0, 0, 0, 0)) !important;
 }
 
-.nav-link{
-    font-size:1.25rem;
-    color:dark-grey;
+.navbar-dark .navbar-nav .nav-link{
+    color:#dfd6d9;
 }
 
 .nav-link.active{
     text-decoration:underline;
 }
 
-.navbar-brand{
+.navbar-dark .navbar-nav .nav-link:focus, 
+.navbar-dark .navbar-nav .nav-link:hover{
+    color:#fff;
+}
+
+.navbar-dark .navbar-brand{
     font-size:2.0rem;
+    color:#dfd6d9;
 }
 
 @media (min-width: 576px){
@@ -27,13 +46,89 @@ img{
 }
 }
 
+@media (min-width: 1200px) {  
+    .navbar-dark .navbar-brand{
+        font-size:3.0rem;
+    }   
+    .nav-link{
+        font-size:2.0rem;
+    } 
+}
 
-.navcallout-container{
-    background: lightblue url("../images/dmp-0204_websize.jpg") no-repeat bottom center fixed;
-    background-size: cover;
+/* CALLOUT ------------------------------------------------------------------------------------------------------------*/
+#cover-text{
+    width: 35%;
+    height: 35%;
+    background-color: rgb(73 162 110 / 79%);
+    border: none;
+    border-radius: 25px;
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color:white;
+    padding:2% 2%;
+    }
+
+#cover-text h1{
+    font-size:2.5rem;
+    }
+
+#cover-text p{
+    font-size:1.5rem;
+    }
+
+.btn-success{
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgb(62 134 92);
+    border-color: rgb(62 134 92);
+    border-radius:11px;
+    }
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus,
+.btn-success:active:focus{
+    background-color: rgb(51 109 75);
+    border-color: rgb(51 109 75);
+    }
+
+/* MAIN IMAGE ----------------------------------------------------------------------------------------------------------*/
+
+#navimage-outer{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left:0;
     height:100vh;
     width:100%;
     overflow:hidden;
-    scale:0.5;
 }
 
+#image{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height:100vh;
+    width:100%;
+    background: url("../images/dmp-0204_websize.jpg") no-repeat center center;
+    background-size:cover;
+       
+    animation-name: image-zoom;
+    animation-duration: 7.5s;
+    animation-fill-mode: forwards;
+}
+ @keyframes image-zoom {
+    from{
+        transform: scale(1.0);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
